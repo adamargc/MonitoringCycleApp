@@ -11,6 +11,11 @@ const PatientSchema = new Schema({
     patient_id: {
         type: Schema.Types.String,
         required: true
+    },
+
+    firstName: {
+        type: Schema.Types.String,
+        required: true
     }
 });
 
@@ -19,6 +24,7 @@ PatientSchema.statics.create = function(obj) {
     const patient = new Patient();
     patient.name = obj.name;
     patient.patient_id = obj.patient_id;
+    patient.firstName = obj.firstName;
     return patient;
 }
 
