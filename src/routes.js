@@ -47,4 +47,17 @@ router.route("/patients")
 
     });
 
+    router.route("/patients/:id")
+    .get((req, res) => {
+        console.log(`GET /patients/${req.params.id}`);
+        Patient.findOne({patient_id: req.params.id})
+           
+            .then(data => {
+                res.status(200).send(data);
+            })
+            .catch(err => {
+                res.status(500).send(err);
+            });
+    });
+
     module.exports = router;

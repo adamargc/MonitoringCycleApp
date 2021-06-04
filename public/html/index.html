@@ -70,6 +70,32 @@
           <div class="page-header">
             <h1 class="page-heading">There's nothing here right now</h1>
           </div>
+          <section>
+            <div class="card mb-4">
+              <div class="card-header">
+                <h4 class="card-heading">Patient Search</h4>
+              </div>
+              <div class="card-body">               
+                <p class="text-muted">You can search for a patient using their Patient ID</p>
+                <div class="col-md-4">
+                  <label class="form-label" for="validationCustom01">Patient ID</label>
+                  <input class="form-control" id="validationCustom01" type="text" value="" required="">
+                  <button class="btn btn-primary" >Search</button>
+                  <div class="valid-feedback">Looks good!</div>
+                  <div class="invalid-feedback">Please enter the patient ID.</div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section>
+            <div class="card mb-4 bg-success text-white" id="success">
+              <div class="card-header card-header-transparent card-heading">New Patient Was Successfully Created</div>
+              <div class="card-body">
+                <h5 class="card-title">Patient Registration Infomration</h5>
+                <p class="card-text" id="return-data">Name: </p>
+              </div>
+            </div>
+          </section>
          
         </div>
         <footer class="footer bg-white shadow align-self-end py-3 px-xl-5 w-100">
@@ -95,6 +121,7 @@
     <script src="js/charts-home.js"></script>
     <!-- Main Theme JS File-->
     <script src="js/theme.js"></script>
+    <script src="js/search.js"></script>
     <!-- Prism for syntax highlighting-->
     <script src="vendor/prismjs/prism.js"></script>
     <script src="vendor/prismjs/plugins/normalize-whitespace/prism-normalize-whitespace.min.js"></script>
