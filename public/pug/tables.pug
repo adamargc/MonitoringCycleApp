@@ -1,0 +1,152 @@
+extends _pug-includes/layout.pug
+
+block vars
+    - var tables = true;
+    - var current = 'tables.html';
+    - var breadcrumbs = []
+    - breadcrumbs.push({name: 'Home', link: 'index.html'})
+    - breadcrumbs.push({name: 'Tables'})   
+
+block content
+
+    +breadcrumbs(breadcrumbs)
+    +pageHeader('Tables') 
+
+    section
+        .row
+            .col-lg-6
+                .card.mb-4
+                    .card-header
+                        h4.card-heading Basic Table
+                    .card-body
+                        table.table.card-text
+                            thead
+                                tr
+                                    th #
+                                    th First Name
+                                    th Last Name
+                                    th Username
+                            tbody
+                                tr
+                                    th(scope='row') 1
+                                    td Mark
+                                    td Otto
+                                    td @mdo
+                                tr
+                                    th(scope='row') 2
+                                    td Jacob
+                                    td Thornton
+                                    td @fat
+                                tr
+                                    th(scope='row') 3
+                                    td Larry
+                                    td the Bird
+                                    td @twitter
+            .col-lg-6
+                .card.mb-4
+                    .card-header
+                        h4.card-heading Striped Table
+                    .card-body                            
+                        table.table.table-striped.card-text
+                            thead
+                                tr
+                                    th #
+                                    th First Name
+                                    th Last Name
+                                    th Username
+                            tbody
+                                tr
+                                    th(scope='row') 1
+                                    td Mark
+                                    td Otto
+                                    td @mdo
+                                tr
+                                    th(scope='row') 2
+                                    td Jacob
+                                    td Thornton
+                                    td @fat
+                                tr
+                                    th(scope='row') 3
+                                    td Larry
+                                    td the Bird
+                                    td @twitter                            
+                        
+            .col-lg-6
+                .card.mb-4
+                    .card-header
+                        h4.card-heading Striped table with hover effect
+                    .card-body                            
+                        table.table.table-striped.table-hover.card-text
+                            thead
+                                tr
+                                    th #
+                                    th First Name
+                                    th Last Name
+                                    th Username
+                            tbody
+                                tr
+                                    th(scope='row') 1
+                                    td Mark
+                                    td Otto
+                                    td @mdo
+                                tr
+                                    th(scope='row') 2
+                                    td Jacob
+                                    td Thornton
+                                    td @fat
+                                tr
+                                    th(scope='row') 3
+                                    td Larry
+                                    td the Bird
+                                    td @twitter                            
+                            
+                                tr
+                                    th(scope='row') 3
+                                    td Sam
+                                    td Nevoresky
+                                    td @facebook                            
+                        
+            .col-lg-6
+                .card.mb-4
+                    .card-header
+                        h4.card-heading Compact Table
+                    .card-body                           
+                        table.table.table-striped.table-sm.card-text
+                            thead
+                                tr
+                                    th #
+                                    th First Name
+                                    th Last Name
+                                    th Username
+                            tbody
+                                tr
+                                    th(scope='row') 1
+                                    td Mark
+                                    td Otto
+                                    td @mdo
+                                tr
+                                    th(scope='row') 2
+                                    td Jacob
+                                    td Thornton
+                                    td @fat
+                                tr
+                                    th(scope='row') 3
+                                    td Larry
+                                    td the Bird
+                                    td @twitter      
+                                tr
+                                    th(scope='row') 4
+                                    td Mark
+                                    td Otto
+                                    td @mdo
+                                tr
+                                    th(scope='row') 5
+                                    td Jacob
+                                    td Thornton
+                                    td @fat
+                                tr
+                                    th(scope='row') 6
+                                    td Larry
+                                    td the Bird
+                                    td @twitter
+            

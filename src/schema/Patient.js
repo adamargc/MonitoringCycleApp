@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const PatientSchema = new Schema({
-    name: {
+    firstName: {
         type: Schema.Types.String,
         required: true
     },
@@ -13,7 +13,7 @@ const PatientSchema = new Schema({
         required: true
     },
 
-    firstName: {
+    lastName: {
         type: Schema.Types.String,
         required: true
     }
@@ -22,9 +22,9 @@ const PatientSchema = new Schema({
 PatientSchema.statics.create = function(obj) {
     const Patient = mongoose.model("Patient", PatientSchema);
     const patient = new Patient();
-    patient.name = obj.name;
-    patient.patient_id = obj.patient_id;
     patient.firstName = obj.firstName;
+    patient.patient_id = obj.patient_id;
+    patient.lastName = obj.lastName;
     return patient;
 }
 

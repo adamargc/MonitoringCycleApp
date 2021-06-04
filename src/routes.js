@@ -26,11 +26,16 @@ router.route("/patients")
     })
     .post((req, res) => {
         console.log("POST /patients");
-        if (typeof req.body.name == "undefined") {
-            res.status(500).send({message: "You need to submit a name"})
+        if (typeof req.body.firstName == "undefined") {
+            res.status(500).send({message: "You need to submit a firstName"})
         } else if (typeof req.body.patient_id == "undefined") {
             res.status(500).send({message: "You need to submit a patient ID"})
-        } else {
+        } else if (typeof req.body.lastName == "undefined") {
+            res.status(500).send({message: "You need to submit a lastName"})
+        }
+        
+        
+        else {
             Patient.create(req.body).save()
             .then(data => {
                 res.status(201).send(data)

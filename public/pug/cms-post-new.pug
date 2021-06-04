@@ -1,0 +1,172 @@
+extends _pug-includes/layout
+
+block vars 
+    - var cms = true;
+    - var current = 'cms-post-new.html';  
+
+block content
+        +pageHeader('Add new post')
+        
+        section
+            .row.mb-5
+                .col-lg-8.col-xxl-9.mb-4.mb-lg-0
+                    .card
+                        .card-body
+                            label.form-label(for="postTitle") Title
+                            input.form-control.mb-4#postTitle(type="text")
+                            
+                            button.btn.btn-outline-primary.mb-4 Add Media
+
+                            #editorWithToolbar
+                                #toolbar-container
+                                    span.ql-formats
+                                        select.ql-font
+                                        select.ql-size
+                                    span.ql-formats
+                                        button.ql-bold
+                                        button.ql-italic
+                                        button.ql-underline
+                                        button.ql-strike
+                                    span.ql-formats
+                                        select.ql-color
+                                        select.ql-background
+                                    span.ql-formats
+                                        button.ql-script(value='sub')
+                                        button.ql-script(value='super')
+                                    span.ql-formats
+                                        button.ql-header(value='1')
+                                        button.ql-header(value='2')
+                                        button.ql-blockquote
+                                        button.ql-code-block
+                                    span.ql-formats
+                                        button.ql-list(value='ordered')
+                                        button.ql-list(value='bullet')
+                                        button.ql-indent(value='-1')
+                                        button.ql-indent(value='+1')
+                                    span.ql-formats
+                                        button.ql-direction(value='rtl')
+                                        select.ql-align
+                                    span.ql-formats
+                                        button.ql-link
+                                    span.ql-formats
+                                        button.ql-clean
+                                #editor-container.bg-white(style="min-height: 300px; max-height: 1000px;overflow-y: auto;")
+                                    h2 Minas Tirith
+                                    p
+                                        br
+                                    p
+                                        | Pippin looked out from the shelter of Gandalf"s cloak. He wondered if he was awake or still sleeping, still in the swift-moving dream in which he had been wrapped so long since the great ride began. The dark world was rushing by and the wind sang loudly in his ears. He could see nothing but the wheeling stars, and away to his right vast shadows against the sky where the mountains of the South marched past. Sleepily he tried to reckon the times and stages of their journey, but his memory was drowsy and uncertain.
+                                    p
+                                        br
+                                    p
+                                        | There had been the first ride at terrible speed without a halt, and then in the dawn he had seen a pale gleam of gold, and they had come to the silent town and the great empty house on the hill. And hardly had they reached its shelter when the winged shadow had passed over once again, and men wilted with fear. But Gandalf had spoken soft words to him, and he had slept in a corner, tired but uneasy, dimly aware of comings and goings and of men talking and Gandalf giving orders. And then again riding, riding in the night. This was the second, no, the third night since he had looked in the Stone. And with that hideous memory he woke fully, and shivered, and the noise of the wind became filled with menacing voices.
+                                    p
+                                        br
+                                    p
+                                        | A light kindled in the sky, a blaze of yellow fire behind dark barriers Pippin cowered back, afraid for a moment, wondering into what dreadful country Gandalf was bearing him. He rubbed his eyes, and then he saw that it was the moon rising above the eastern shadows, now almost at the full. So the night was not yet old and for hours the dark journey would go on. He stirred and spoke.
+                                    p
+                                        br
+                                    p "Where are we, Gandalf?" he asked.
+                                    p
+                                        br
+                                    p
+                                        | "In the realm of Gondor," the wizard answered. "The land of Anórien is still passing by."
+                                    p
+                                        br
+                                    p
+                                        | There was a silence again for a while. Then, "What is that?" cried Pippin suddenly, clutching at Gandalf"s cloak. "Look! Fire, red fire! Are there dragons in this land? Look, there is another!"
+                                    p
+                                        br
+                                    p
+                                        | For answer Gandalf cried aloud to his horse. "On, Shadowfax! We must hasten. Time is short. See! The beacons of Gondor are alight, calling for aid. War is kindled. See, there is the fire on Amon Dîn, and flame on Eilenach; and there they go speeding west: Nardol, Erelas, Min-Rimmon, Calenhad, and the Halifirien on the borders of Rohan."
+                                    p
+                                        br
+                                    p
+                                        | But Shadowfax paused in his stride, slowing to a walk, and then he lifted up his head and neighed. And out of the darkness the answering neigh of other horses came; and presently the thudding of hoofs was heard, and three riders swept up and passed like flying ghosts in the moon and vanished into the West. Then Shadowfax gathered himself together and sprang away, and the night flowed over him like a roaring wind.
+                    
+                .col-lg-4.col-xxl-3
+                    .card.card-sm.shadow-sm.mb-4
+                        .card-header
+                            h4.card-heading Publish
+                        .card-body.text-gray-700
+                            .d-flex.mb-4.justify-content-between
+                                button.btn.btn-sm.btn-outline-secondary Save Draft
+                                button.btn.btn-sm.btn-outline-secondary Preview
+                            hr.bg-gray-500
+                            .mb-3 
+                                | Status: 
+                                strong Draft 
+                                a.ms-2.text-sm(data-bs-toggle='collapse' href='#collapseStatus' role='button' aria-expanded='false' aria-controls='collapseStatus') Edit
+                                #collapseStatus.collapse
+                                    .py-2
+                                        select.form-select.form-select-sm(aria-label='Default select example')
+                                            option Draft
+                                            option Pending Review
+
+
+                            .mb-3 
+                                | Visibility: 
+                                strong Public 
+                                a.ms-2.text-sm(data-bs-toggle='collapse' href='#collapseVisibility' role='button' aria-expanded='false' aria-controls='collapseVisibility') Edit
+                                #collapseVisibility.collapse
+                                    .py-2
+                                        .form-check
+                                            input.form-check-input(type='radio' name='visibility', id='visibility1')
+                                            label.form-check-label(for='visibility1') Public
+                                        .form-check
+                                            input.form-check-input(type='radio' name='visibility', id='visibility2')
+                                            label.form-check-label(for='visibility2') Password protected
+                                        .form-check
+                                            input.form-check-input(type='radio' name='visibility', id='visibility3')
+                                            label.form-check-label(for='visibility3') Private
+
+                            div 
+                                | Publish 
+                                strong immediately 
+                                a.ms-2.text-sm(data-bs-toggle='collapse' href='#collapsePublish' role='button' aria-expanded='false' aria-controls='collapsePublish') Edit
+                                #collapsePublish.collapse
+                                    .py-3
+                                        .row.g-2
+                                            .col-lg-6     
+                                                input.form-control.form-control-sm#datePublished(value='10/20/2017') 
+                                            .col-lg-6
+                                                .d-flex.align-items-center.text-sm
+                                                    span.me-1 at
+                                                    input.form-control.form-control-sm.text-center#hoursPublished(type="text", value="8")
+                                                    span.mx-1 :
+                                                    input.form-control.form-control-sm.text-center#minutesPublished(type="text", value="00")
+                        .card-footer.text-end
+                            button.btn.btn-primary Publish
+                    .card.shadow-sm.mb-4
+                        .card-header
+                            h4.card-heading Format
+                        .card-body
+                            - var formats = []
+                            - formats.push({name: 'Standard', icon: ''})
+                            - formats.push({name: 'Aside', icon: ''})
+                            - formats.push({name: 'Image', icon: ''})
+                            - formats.push({name: 'Video', icon: ''})
+                            - formats.push({name: 'Quote', icon: ''})
+                            - formats.push({name: 'Link', icon: ''})
+
+                            each val, index in formats
+                                .form-check
+                                    input.form-check-input(type='radio' name='format', id='format' + index, checked = (index==0))
+                                    label.form-check-label(for='format' + index) #{val.name}
+                    .card.shadow-sm.mb-4
+                        .card-header
+                            h4.card-heading Categories
+                        .card-body
+                            - var categories = [ 'Gear', 'Stories', 'Tips & Tricks', 'Trips', 'Uncategorized']
+                            .mb-4
+                                each val, index in categories
+                                    .form-check
+                                        input.form-check-input(type='checkbox' name='category', id='category' + index)
+                                        label.form-check-label(for='category' + index) #{val}
+
+                            a.btn-link(href="#") + Add New Category
+                    .card.shadow-sm.mb-4
+                        .card-header
+                            h4.card-heading Tags
+                        .card-body
+                            input#tags.form-control(type='text' value='Tag 1, Tag 2' placeholder='Enter something')

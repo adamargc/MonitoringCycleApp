@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>ARGC|UK Post Consultation Checklist</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="all,follow">
+    <!-- Google fonts - Popppins for copy-->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&amp;display=swap" rel="stylesheet">
+    <!-- Prism Syntax Highlighting-->
+    <link rel="stylesheet" href="vendor/prismjs/plugins/toolbar/prism-toolbar.css">
+    <link rel="stylesheet" href="vendor/prismjs/themes/prism-okaidia.css">
+    <!-- The Main Theme stylesheet (Contains also Bootstrap CSS)-->
+    <link rel="stylesheet" href="css/style.default.css" id="theme-stylesheet">
+    <!-- Custom stylesheet - for your changes-->
+    <link rel="stylesheet" href="css/custom.css">
+    <!-- Favicon-->
+    <link rel="shortcut icon" href="img/argclogo.png">
+  </head>
+  <body>
+    <!-- navbar-->
+    <header class="header">
+      <nav class="navbar navbar-expand-lg px-4 py-2 bg-white shadow"><a class="sidebar-toggler text-gray-500 me-4 me-lg-5 lead" href="#"><i class="fas fa-align-left"></i></a><a class="navbar-brand fw-bold text-uppercase text-base" href="index.html"><span class="d-none d-brand-partial">ARGC|UK </span><span class="d-none d-sm-inline">New Patients</span></a>
+        <ul class="ms-auto d-flex align-items-center list-unstyled mb-0">
+          <li class="nav-item">
+            <form class="ms-auto d-none d-lg-block" id="searchForm">
+              <div class="form-group position-relative mb-0">
+                <button class="position-absolute bg-white border-0 p-0" type="submit" style="top: -3px; left: 0;"><i class="o-search-magnify-1 text-gray-500 text-lg"></i></button>
+                <input class="form-control form-control-sm border-0 shadow-0 ps-4" type="search" placeholder="Search ...">
+              </div>
+            </form>
+          </li>
+          
+            </div>
+          </li>
+         
+      </nav>
+    </header>
+    <div class="d-flex align-items-stretch">
+      <div class="sidebar py-3" id="sidebar">
+        <h6 class="sidebar-heading">Main</h6>
+        <ul class="list-unstyled">
+              <li class="sidebar-list-item"><a class="sidebar-link text-muted" href="index.html">
+                      <svg class="svg-icon svg-icon-md me-3">
+                        <use xlink:href="#real-estate-1"> </use>
+                      </svg><span class="sidebar-link-title">Dashboard</span></a></li>
+
+              <li class="sidebar-list-item"><a class="sidebar-link text-muted" href="registration.html">
+                <svg class="svg-icon svg-icon-md me-3">
+                  <use xlink:href="#real-estate-1"> </use>
+                </svg><span class="sidebar-link-title">Registration</span></a></li>
+              
+              <li class="sidebar-list-item"><a class="sidebar-link text-muted active" href="#" data-bs-target="#formsDropdown" role="button" aria-expanded="false" data-bs-toggle="collapse"> 
+                      <svg class="svg-icon svg-icon-md me-3">
+                        <use xlink:href="#file-storage-1"> </use>
+                      </svg><span class="sidebar-link-title active">Checklists </span></a>
+                <ul class="sidebar-menu list-unstyled active " id="formsDropdown">
+                  <li class="sidebar-list-item"><a class="sidebar-link text-muted active" href="checklist.html">Post Consultation Checklist</a></li>
+                </ul>
+              </li>
+
+   
+
+        </ul>
+        </div>
+      <div class="page-holder bg-gray-100">
+        <div class="container-fluid px-lg-4 px-xl-5">
+          
+         
+        </div>
+        <footer class="footer bg-white shadow align-self-end py-3 px-xl-5 w-100">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-md-6 text-center text-md-start text-primary">
+                <p class="mb-2 mb-md-0">Your company &copy; 2021</p>
+              </div>
+              <div class="col-md-6 text-center text-md-end text-gray-400">
+                <p class="mb-0">Version 1.0.0</p>
+              </div>
+            </div>
+          </div>
+        </footer>
+      </div>
+    </div>
+    <!-- JavaScript files-->
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+    <!-- Init Charts on Homepage-->
+    <script src="vendor/chart.js/Chart.min.js"></script>
+    <script src="js/charts-defaults.js"></script>
+    <script src="js/charts-home.js"></script>
+    <!-- Main Theme JS File-->
+    <script src="js/theme.js"></script>
+    <!-- Prism for syntax highlighting-->
+    <script src="vendor/prismjs/prism.js"></script>
+    <script src="vendor/prismjs/plugins/normalize-whitespace/prism-normalize-whitespace.min.js"></script>
+    <script src="vendor/prismjs/plugins/toolbar/prism-toolbar.min.js"></script>
+    <script src="vendor/prismjs/plugins/copy-to-clipboard/prism-copy-to-clipboard.min.js"></script>
+    <script type="text/javascript">
+      // Optional
+      Prism.plugins.NormalizeWhitespace.setDefaults({
+      'remove-trailing': true,
+      'remove-indent': true,
+      'left-trim': true,
+      'right-trim': true,
+      });
+          
+    </script>
+    <script>
+      // ------------------------------------------------------- //
+      //   Inject SVG Sprite - 
+      //   see more here 
+      //   https://css-tricks.com/ajaxing-svg-sprite/
+      // ------------------------------------------------------ //
+      function injectSvgSprite(path) {
+      
+          var ajax = new XMLHttpRequest();
+          ajax.open("GET", path, true);
+          ajax.send();
+          ajax.onload = function(e) {
+          var div = document.createElement("div");
+          div.className = 'd-none';
+          div.innerHTML = ajax.responseText;
+          document.body.insertBefore(div, document.body.childNodes[0]);
+          }
+      }
+      // this is set to BootstrapTemple website as you cannot 
+      // inject local SVG sprite (using only 'icons/orion-svg-sprite.svg' path)
+      // while using file:// protocol
+      // pls don't forget to change to your domain :)
+      injectSvgSprite('https://demo.bootstrapious.com/bubbly/1-0/icons/orion-svg-sprite.57a86639.svg');
+      
+    </script>
+    <!-- FontAwesome CSS - loading as last, so it doesn't block rendering-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  </body>
+</html>
