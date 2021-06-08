@@ -10,6 +10,7 @@ const PatientSchema = new Schema({
     },
     patient_id: {
         type: Schema.Types.String,
+        unique: true,
         required: true
     },
 
