@@ -78,11 +78,14 @@
               <div class="card-body">               
                 <p class="text-muted">You can search for a patient using their Patient ID</p>
                 <div class="col-md-4">
-                  <label class="form-label" for="validationCustom01">Patient ID</label>
-                  <input class="form-control" id="validationCustom01" type="text" value="" required="">
-                  <button class="btn btn-primary" >Search</button>
-                  <div class="valid-feedback">Looks good!</div>
-                  <div class="invalid-feedback">Please enter the patient ID.</div>
+                  <form class="row g-3 needs-validation" novalidate="">
+                    <label class="form-label" for="validationCustom01">Patient ID</label>
+                    <input class="form-control" id="validationCustom01" type="text" value="" required="">
+                    <button class="btn btn-primary" >Search</button>
+                    <div class="valid-feedback">Looks good!</div>
+                    <div class="invalid-feedback">Please enter the patient ID.</div>
+                  </form>
+                  
                 </div>
               </div>
             </div>

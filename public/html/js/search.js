@@ -21,7 +21,7 @@ function searchPatient() {
         })
         .then(data => {
             console.log('Success:', data);
-            document.getElementById("return-data").innerHTML= `<p>First Name: ${firstName}</p><p>Last Name: ${lastName}</p><p>Patient Number: ${patientID}</p>`;
+            document.getElementById("return-data").innerHTML= `<p>First Name: ${data.firstName}</p><p>Last Name: ${data.lastName}</p><p>Patient Number: ${data.patient_id}</p>`;
         })
         .catch(err => {
             console.log(err);
