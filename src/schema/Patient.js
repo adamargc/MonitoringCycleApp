@@ -17,6 +17,16 @@ const PatientSchema = new Schema({
     lastName: {
         type: Schema.Types.String,
         required: true
+    }, 
+
+    testsRequested: {
+        type: Schema.Types.Array,
+        required: true
+    }, 
+
+    testsCompleted: {
+        type: Schema.Types.Array,
+        required: true
     }
 });
 

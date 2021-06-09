@@ -1,5 +1,6 @@
 const baseURL = 'http://localhost:8081';
-let currentPatient
+// let currentPatient
+var found = false
 
 "use strict";
 
@@ -16,12 +17,20 @@ function searchPatient() {
             if (!response.ok) {
                 throw Error(response.statusText);
             } else {
+                
                 return response.json();
             }
         })
         .then(data => {
             console.log('Success:', data);
-            document.getElementById("return-data").innerHTML= `<p>First Name: ${data.firstName}</p><p>Last Name: ${data.lastName}</p><p>Patient Number: ${data.patient_id}</p>`;
+            // console.log(data.status)
+            let found = true;
+            if (found) {
+                document.getElementById("return-data").innerHTML= `<p>First Name: ${data.firstName}</p><p>Last Name: ${data.lastName}</p><p id="pn" value=${data.patient_id}>${data.patient_id}</p>`;
+                document.getElementById("success").style.display = "block";
+                document.getElementById("builder").style.display = "block";
+                document.getElementById("test-return").innerHTML = `<p id="ptests" value=${data.testsRequested}>${data.testsRequested}</p>`;
+            } 
         })
         .catch(err => {
             console.log(err);
@@ -43,12 +52,14 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (!form.checkValidity()) {
                     event.preventDefault();
                     event.stopPropagation();
+                    document.getElementById("feedback").innerHTML = '<p>There is no patient with this ID</p>';
                     
                 } else {
-                    document.getElementById("success").style.display = "block";
+                    
                     event.preventDefault();
                     post = true;
                     searchPatient();
+                    console.log('found', found)
                     // event.stopPropagation();
                 }
 

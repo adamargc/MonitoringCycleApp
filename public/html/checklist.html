@@ -68,117 +68,169 @@
         </div>
       <div class="page-holder bg-gray-100">
         <div class="container-fluid px-lg-4 px-xl-5">
-        <section>
-          <div class="card-body">
-            <table class="table table-striped card-text">
-              <thead>
-                <tr>
-                  <th>#</th>
-                  <th>Requirement</th>
-                  <th>Yes/No</th>
-                  <th>Notes</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <th scope="row">1</th>
-                  <td> HIV 1 & 2 Antibodies</td>
-                  <td> <button class="btn btn-primary" style="background-color:green"> Yes </button> <button class="btn btn-primary" style="background-color:red"> No </button></td>
-                  <td> <input class="form-control" type="text"> </td>
-                </tr>
-                <tr>
-                  <th scope="row">2</th>
-                  <td> Hepatitis C Antibodies</td>
-                  <td> <button class="btn btn-primary" style="background-color:green"> Yes </button> <button class="btn btn-primary" style="background-color:red"> No </button></td>
-                  <td> <input class="form-control" type="text"> </td>
-                </tr>
-                <tr>
-                  <th scope="row">3</th>
-                  <td> Hepatitis B Surface Antigen</td>
-                  <td> <button class="btn btn-primary" style="background-color:green"> Yes </button> <button class="btn btn-primary" style="background-color:red"> No </button></td>
-                  <td> <input class="form-control" type="text"> </td>
-                </tr>
-                <tr>
-                  <th scope="row">4</th>
-                  <td> Hepatitis B Core Antibody</td>
-                  <td> <button class="btn btn-primary" style="background-color:green"> Yes </button> <button class="btn btn-primary" style="background-color:red"> No </button></td>
-                  <td> <input class="form-control" type="text"> </td>
-                </tr>
-
-              </tbody>
-
-            </table>
+          <section>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="card mb-4">
+                  <div class="card-header">
+                    <h4 class="card-heading">Patient Search</h4>
+                  </div>
+                  <div class="card-body">               
+                    <p class="text-muted">You can search for a patient using their Patient ID</p>
+                    <p class="text-muted">No further information will appear until a valid Patient ID is entered e.g. AA10000</p>
+                    <div class="col-md-4">
+                      <form class="row g-3 needs-validation" novalidate="">
+                        <label class="form-label" for="validationCustom01">Patient ID</label>
+                        <input class="form-control" id="validationCustom01" type="text" value="" required="">
+                        <button class="btn btn-primary" >Search</button>
+                        <div class="valid-feedback" id="feedback">Looks good!</div>
+                        <div class="invalid-feedback">Please enter the patient ID.</div>
+                      </form>
+                      
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="card mb-4 bg-success text-white" id="success">
+                  <div class="card-header card-header-transparent card-heading">New Patient Was Successfully Created</div>
+                  <div class="card-body">
+                    <h5 class="card-title">Patient Registration Infomration</h5>
+                    <p class="card-text" id="return-data">Name: </p>
+                  </div>
+                </div>
+              </div>
           </div>
+          </section>
+        <section id="builder" style="display: none">
+          
+          <div class="row">
+            <div class="col-md-6 col-lg-6">
+              <div class="card mb-4 bg-light text-white">
+                <div class="card-header card-header-transparent card-heading">Checklist Builder</div>
+                <div class="card-body">
+                  <table class="table table-striped card-text">
+                    <thead>
+                      <tr>
+                        <th>#</th>
+                        <th>Requirement</th>
+                        <th>Yes/No</th>
+                        <th>Notes</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">1</th>
+                        <td> HIV 1 & 2 Antibodies</td>
+                        <td> <button class="btn btn-primary" style="background-color:green" id="btn1" value="1" onclick=addTest(this.value)> Yes </button> <button class="btn btn-primary" style="background-color:red"> No </button></td>
+                        <td> <input class="form-control" type="text"> </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">2</th>
+                        <td> Hepatitis C Antibodies</td>
+                        <td> <button class="btn btn-primary" style="background-color:green" id="btn2" value="2" onclick=addTest(this.value)> Yes </button> <button class="btn btn-primary" style="background-color:red"> No </button></td>
+                        <td> <input class="form-control" type="text"> </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">3</th>
+                        <td> Hepatitis B Surface Antigen</td>
+                        <td> <button class="btn btn-primary" style="background-color:green" id="btn3" value="3" onclick=addTest(this.value)> Yes </button> <button class="btn btn-primary" style="background-color:red"> No </button></td>
+                        <td> <input class="form-control" type="text"> </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">4</th>
+                        <td> Hepatitis B Core Antibody</td>
+                        <td> <button class="btn btn-primary" style="background-color:green" id="btn4" value="4" onclick=addTest(this.value)> Yes </button> <button class="btn btn-primary" style="background-color:red"> No </button></td>
+                        <td> <input class="form-control" type="text"> </td>
+                      </tr>
 
-          <div class="card-body">
-            <table class="table table-striped card-text">
-              <thead>
-                <tr>
-                  <th>#</th>
-                  <th>Requirement</th>
-                  <th>Yes/No</th>
-                  <th>Notes</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <th scope="row">1</th>
-                  <td>Initial Hormone Profile</td>
-                  <td> <button class="btn btn-primary" style="background-color:green"> Yes </button> <button class="btn btn-primary" style="background-color:red"> No </button></td>
-                  <td> <input class="form-control" type="text"> </td>
-                </tr>
-                <tr>
-                  <th scope="row">2</th>
-                  <td> Midcycle Scan</td>
-                  <td> <button class="btn btn-primary" style="background-color:green"> Yes </button> <button class="btn btn-primary" style="background-color:red"> No </button></td>
-                  <td> <input class="form-control" type="text"> </td>
-                </tr>
-                <tr>
-                  <th scope="row">3</th>
-                  <td> AMH</td>
-                  <td> <button class="btn btn-primary" style="background-color:green"> Yes </button> <button class="btn btn-primary" style="background-color:red"> No </button></td>
-                  <td> <input class="form-control" type="text"> </td>
-                </tr>
-                <tr>
-                  <th scope="row">4</th>
-                  <td> Vitamin D</td>
-                  <td> <button class="btn btn-primary" style="background-color:green"> Yes </button> <button class="btn btn-primary" style="background-color:red"> No </button></td>
-                  <td> <input class="form-control" type="text"> </td>
-                </tr>
-                <tr>
-                  <th scope="row">5</th>
-                  <td>Ureaplasma and Mycoplasma</td>
-                  <td> <button class="btn btn-primary" style="background-color:green"> Yes </button> <button class="btn btn-primary" style="background-color:red"> No </button></td>
-                  <td> <input class="form-control" type="text"> </td>
-                </tr>
-                <tr>
-                  <th scope="row">6</th>
-                  <td> Chlamydia</td>
-                  <td> <button class="btn btn-primary" style="background-color:green"> Yes </button> <button class="btn btn-primary" style="background-color:red"> No </button></td>
-                  <td> <input class="form-control" type="text"> </td>
-                </tr>
-                <tr>
-                  <th scope="row">7</th>
-                  <td> Gonorrhoea</td>
-                  <td> <button class="btn btn-primary" style="background-color:green"> Yes </button> <button class="btn btn-primary" style="background-color:red"> No </button></td>
-                  <td> <input class="form-control" type="text"> </td>
-                </tr>
-                <tr>
-                  <th scope="row">8</th>
-                  <td> Rubella Status</td>
-                  <td> <button class="btn btn-primary" style="background-color:green"> Yes </button> <button class="btn btn-primary" style="background-color:red"> No </button></td>
-                  <td> <input class="form-control" type="text"> </td>
-                </tr>
-                <tr>
-                  <th scope="row">9</th>
-                  <td> Thyroid Function Test</td>
-                  <td> <button class="btn btn-primary" style="background-color:green"> Yes </button> <button class="btn btn-primary" style="background-color:red"> No </button></td>
-                  <td> <input class="form-control" type="text"> </td>
-                </tr>
+                    </tbody>
 
-              </tbody>
+                  </table>
+                
+                  <table class="table table-striped card-text">
+                    <thead>
+                      <tr>
+                        <th>#</th>
+                        <th>Requirement</th>
+                        <th>Yes/No</th>
+                        <th>Notes</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">5</th>
+                        <td>Initial Hormone Profile</td>
+                        <td> <button class="btn btn-primary" style="background-color:green" value="5" onclick=addTest(this.value)> Yes </button> <button class="btn btn-primary" style="background-color:red"> No </button></td>
+                        <td> <input class="form-control" type="text"> </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">6</th>
+                        <td> Midcycle Scan</td>
+                        <td> <button class="btn btn-primary" style="background-color:green" value="6" onclick=addTest(this.value)> Yes </button> <button class="btn btn-primary" style="background-color:red"> No </button></td>
+                        <td> <input class="form-control" type="text"> </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">7</th>
+                        <td> AMH</td>
+                        <td> <button class="btn btn-primary" style="background-color:green" value="7" onclick=addTest(this.value)> Yes </button> <button class="btn btn-primary" style="background-color:red"> No </button></td>
+                        <td> <input class="form-control" type="text"> </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">8</th>
+                        <td> Vitamin D</td>
+                        <td> <button class="btn btn-primary" style="background-color:green" value="8" onclick=addTest(this.value)> Yes </button> <button class="btn btn-primary" style="background-color:red"> No </button></td>
+                        <td> <input class="form-control" type="text"> </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">9</th>
+                        <td>Ureaplasma and Mycoplasma</td>
+                        <td> <button class="btn btn-primary" style="background-color:green" value="9" onclick=addTest(this.value) > Yes </button> <button class="btn btn-primary" style="background-color:red"> No </button></td>
+                        <td> <input class="form-control" type="text"> </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">10</th>
+                        <td> Chlamydia</td>
+                        <td> <button class="btn btn-primary" style="background-color:green" value="10" onclick=addTest(this.value)> Yes </button> <button class="btn btn-primary" style="background-color:red"> No </button></td>
+                        <td> <input class="form-control" type="text"> </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">11</th>
+                        <td> Gonorrhoea</td>
+                        <td> <button class="btn btn-primary" style="background-color:green" value="11" onclick=addTest(this.value)> Yes </button> <button class="btn btn-primary" style="background-color:red"> No </button></td>
+                        <td> <input class="form-control" type="text"> </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">12</th>
+                        <td> Rubella Status</td>
+                        <td> <button class="btn btn-primary" style="background-color:green" value="12" onclick=addTest(this.value)> Yes </button> <button class="btn btn-primary" style="background-color:red"> No </button></td>
+                        <td> <input class="form-control" type="text"> </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">13</th>
+                        <td> Thyroid Function Test</td>
+                        <td> <button class="btn btn-primary" style="background-color:green" value="13" onclick=addTest(this.value)> Yes </button> <button class="btn btn-primary" style="background-color:red"> No </button></td>
+                        <td> <input class="form-control" type="text"> </td>
+                      </tr>
 
-            </table>
+                    </tbody>
+
+                  </table>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-6">
+              <div class="card mb-4 bg-light">
+                <div class="card-header card-header-transparent card-heading">Requested Tests</div>
+                  <div class="card-body">
+                    <h5 class="card-title">All Requested Tests</h5>
+                    <p class="card-text" id="test-return">List of tests goes here </p>
+                  </div>
+              </div>
+            </div>
+
+
+
           </div>
 
 
@@ -212,6 +264,8 @@
     <script src="js/charts-home.js"></script>
     <!-- Main Theme JS File-->
     <script src="js/theme.js"></script>
+    <script src="js/search.js"></script>
+    <script src="js/addTest.js"></script>
     <!-- Prism for syntax highlighting-->
     <script src="vendor/prismjs/prism.js"></script>
     <script src="vendor/prismjs/plugins/normalize-whitespace/prism-normalize-whitespace.min.js"></script>
